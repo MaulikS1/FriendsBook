@@ -1,28 +1,195 @@
-<div class="signup-form">
-    <form action="/examples/actions/confirmation.php" method="post">
-		<h2>Register</h2>
-		<p class="hint-text">Create your account. It's free and only takes a minute.</p>
-        <div class="form-group">
-			<div class="row">
-				<div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
-				<div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
-			</div>        	
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div
+          class="card flex-row my-5 border-7 shadow rounded-3 overflow-hidden"
+        >
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-2">Registration</h5>
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fname"
+                  placeholder="Enter First Name"
+                  formControlName="fname"
+                  [ngClass]="{
+                    'is-invalid':
+                      isUserFormSubmitted && userFormControls['fname'].errors
+                  }"
+                  autofocus
+                />
+                <label for="floatingInputUsername">FirstName</label>
+                <div
+                  *ngIf="
+                    isUserFormSubmitted && userFormControls['fname'].errors
+                  "
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="userFormControls['fname'].errors['required']">
+                    First Name is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lname"
+                  placeholder="Enter Last Name"
+                  formControlName="lname"
+                  [ngClass]="{
+                    'is-invalid':
+                      isUserFormSubmitted && userFormControls['lname'].errors
+                  }"
+                  autofocus
+                />
+                <label for="floatingInputUsername">LastName</label>
+                <div
+                  *ngIf="
+                    isUserFormSubmitted && userFormControls['lname'].errors
+                  "
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="userFormControls['lname'].errors['required']">
+                    Last Name is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Your email"
+                  formControlName="email"
+                  [ngClass]="{
+                    'is-invalid':
+                      isUserFormSubmitted && userFormControls['email'].errors
+                  }"
+                />
+                <label for="floatingInputEmail">Email address</label>
+                <div
+                  *ngIf="
+                    isUserFormSubmitted && userFormControls['email'].errors
+                  "
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="userFormControls['email'].errors['required']">
+                    Email is required
+                  </div>
+                  <div *ngIf="userFormControls['email'].errors['email']">
+                    Enter a valid email address, e.g., john@example.com
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Enter Password"
+                  formControlName="password"
+                  [ngClass]="{
+                    'is-invalid':
+                      isUserFormSubmitted && userFormControls['password'].errors
+                  }"
+                />
+                <label for="floatingPassword">Password</label>
+                <div
+                  *ngIf="
+                    isUserFormSubmitted && userFormControls['password'].errors
+                  "
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="userFormControls['password'].errors['required']">
+                    Password is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirmpassword"
+                  placeholder="Enter Confirm Password"
+                  formControlName="confirmpassword"
+                  [ngClass]="{
+                    'is-invalid':
+                      isUserFormSubmitted &&
+                      userFormControls['confirmpassword'].errors
+                  }"
+                />
+                <label for="floatingPasswordConfirm">Confirm Password</label>
+                <div
+                  *ngIf="
+                    isUserFormSubmitted &&
+                    userFormControls['confirmpassword'].errors
+                  "
+                  class="invalid-feedback"
+                >
+                  <div
+                    *ngIf="
+                      userFormControls['confirmpassword'].errors['required']
+                    "
+                  >
+                    Confirm Password is required
+                  </div>
+                  <div
+                    *ngIf="
+                      userFormControls['confirmpassword'].errors['mustMatch']
+                    "
+                  >
+                    Confirm Password should match
+                  </div>
+                </div>
+              </div>
+
+              <input
+                ng-model="orders"
+                id="orders"
+                value=""
+                hidden="true"
+                formControlName="orders"
+                ng-list
+              />
+
+              <div class="form-group login-group-checkbox">
+                <input type="checkbox" id="terms" name="lg_remember" />
+                <label for="terms">
+                  &nbsp; I accept the Terms of Use & Privacy Policy</label
+                >
+              </div>
+
+              <br />
+
+              <div class="d-grid mb-2">
+                <button
+                  class="btn btn-lg btn-primary btn-login fw-bold text-uppercase"
+                  type="submit"
+                  [disabled]="
+                    !(registrationForm.touched && registrationForm.valid)
+                  "
+                >
+                  Register
+                </button>
+              </div>
+
+              <a routerLink="/login" class="d-block text-center mt-2 small"
+                >Already Have an account? Sign In</a
+              >
+
+              <hr class="my-4" />
+            </form>
+          </div>
         </div>
-        <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
-        </div>
-		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
-        </div>
-		<div class="form-group">
-            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
-        </div>        
-        <div class="form-group">
-			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
-		</div>
-		<div class="form-group">
-            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
-        </div>
-    </form>
-	<div class="text-center">Already have an account? <a href="#">Sign in</a></div>
-</div>
+      </div>
+    </div>
+  </div>
+</body>
