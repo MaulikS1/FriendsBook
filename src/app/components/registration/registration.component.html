@@ -12,23 +12,23 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="fname"
+                  id="firstname"
                   placeholder="Enter First Name"
-                  formControlName="fname"
+                  formControlName="firstname"
                   [ngClass]="{
                     'is-invalid':
-                      isUserFormSubmitted && userFormControls['fname'].errors
+                      isUserFormSubmitted && userFormControls['firstname'].errors
                   }"
                   autofocus
                 />
                 <label for="floatingInputUsername">FirstName</label>
                 <div
                   *ngIf="
-                    isUserFormSubmitted && userFormControls['fname'].errors
+                    isUserFormSubmitted && userFormControls['firstname'].errors
                   "
                   class="invalid-feedback"
                 >
-                  <div *ngIf="userFormControls['fname'].errors['required']">
+                  <div *ngIf="userFormControls['firstname'].errors['required']">
                     First Name is required
                   </div>
                 </div>
@@ -38,28 +38,73 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="lname"
+                  id="lastname"
                   placeholder="Enter Last Name"
-                  formControlName="lname"
+                  formControlName="lastname"
                   [ngClass]="{
                     'is-invalid':
-                      isUserFormSubmitted && userFormControls['lname'].errors
+                      isUserFormSubmitted && userFormControls['lastname'].errors
                   }"
                   autofocus
                 />
                 <label for="floatingInputUsername">LastName</label>
                 <div
                   *ngIf="
-                    isUserFormSubmitted && userFormControls['lname'].errors
+                    isUserFormSubmitted && userFormControls['lastname'].errors
                   "
                   class="invalid-feedback"
                 >
-                  <div *ngIf="userFormControls['lname'].errors['required']">
+                  <div *ngIf="userFormControls['lastname'].errors['required']">
                     Last Name is required
                   </div>
                 </div>
               </div>
 
+              <div class="form-floating mb-3">
+                <input
+                  type="date"
+                  class="form-control"
+                  id="dob"
+                  placeholder="Enter DOB"
+                  formControlName="dob"
+                  [ngClass]="{
+                    'is-invalid':
+                      isUserFormSubmitted && userFormControls['dob'].errors
+                  }"
+                  autofocus
+                />
+                <label for="floatingInputUsername">Date of Birth</label>
+                <div
+                  *ngIf="
+                    isUserFormSubmitted && userFormControls['dob'].errors
+                  "
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="userFormControls['dob'].errors['required']">
+                    Date of Birth is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <select formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': isUserFormSubmitted && userFormControls['dob'].errors }">
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+              </select>
+                <label for="floatingInputUsername">Gender</label>
+                <div
+                  *ngIf="
+                    isUserFormSubmitted && userFormControls['dob'].errors
+                  "
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="userFormControls['dob'].errors['required']">
+                    Gender
+                  </div>
+                </div>
+              </div>
+              
               <div class="form-floating mb-3">
                 <input
                   type="email"

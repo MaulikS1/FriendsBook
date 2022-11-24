@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IUserRegistrationFormData } from 'src/app/Models/register.model';
+import { AuthenticateService } from 'src/app/services/authenticate.service';
 import { MustMatch } from 'src/app/shared/password-match';
 
 
@@ -17,7 +18,7 @@ export class RegistrationComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    //private formService: RegisterService,
+    private formService: AuthenticateService,
     private router: Router
   ) {
     this.registrationForm = {} as FormGroup;
@@ -32,8 +33,10 @@ export class RegistrationComponent implements OnInit {
   public initializeUserForm(): void {
     this.registrationForm = this.formBuilder.group(
       {
-        fname: ['', [Validators.required]],
-        lname: ['', [Validators.required]],
+        firstname: ['', [Validators.required]],
+        lastname: ['', [Validators.required]],
+        dob: ['', [Validators.required]],
+        gender: ['', [Validators.required]],
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         confirmpassword: ['', [Validators.required]],
@@ -60,9 +63,8 @@ export class RegistrationComponent implements OnInit {
   public onSubmit(): void {
     this.isUserFormSubmitted = true;
     this.registrationUserDetails = this.registrationForm.getRawValue();
-    // this.formService
-    //   .register(this.registrationUserDetails)
-    //   .subscribe((val) => {});
+    this.formService.register(this.registrationUserDetails).subscribe((val) => {});
+    console.log("From Value ==>", this.registrationForm.value);
     alert('User Registration Successful.');
     this.router.navigateByUrl('/login');
   }

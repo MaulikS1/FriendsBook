@@ -4,4 +4,5 @@ export interface IUserRegistrationFormData {
   email: string;
   password: string;
   confirmpassword: string;
+  gender:string;
 }
