@@ -7,13 +7,13 @@ body {
 
 .header {
   overflow: hidden;
-  background-color: #b77f25;
+  background-color: #0757a7;
   padding: 3px 3px 3px 1px;
 }
 
 .header a {
   float: left;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px;
   text-decoration: none;
@@ -29,6 +29,7 @@ body {
 .header a.logo {
   font-size: 25px;
   font-weight: bold;
+  background-color: rgb(103, 186, 47);
 }
 
 .header a:hover {
@@ -37,7 +38,7 @@ body {
 }
 
 .header a.active {
-  background-color: rgb(55, 72, 88);
+  background-color: rgb(103, 186, 47);
   color: white;
 }
 
