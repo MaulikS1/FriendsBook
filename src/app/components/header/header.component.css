@@ -32,8 +32,8 @@ body {
 }
 
 .header a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: rgb(55, 72, 88);
+  color: white;
 }
 
 .header a.active {
