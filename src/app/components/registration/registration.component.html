@@ -12,24 +12,24 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="firstname"
+                  id="firstName"
                   placeholder="Enter First Name"
-                  formControlName="firstname"
+                  formControlName="firstName"
                   autocomplete="off"
                   [ngClass]="{
                     'is-invalid':
-                      isUserFormSubmitted && userFormControls['firstname'].errors
+                      isUserFormSubmitted && userFormControls['firstName'].errors
                   }"
                   autofocus
                 />
                 <label for="floatingInputUsername">FirstName</label>
                 <div
                   *ngIf="
-                    isUserFormSubmitted && userFormControls['firstname'].errors
+                    isUserFormSubmitted && userFormControls['firstName'].errors
                   "
                   class="invalid-feedback"
                 >
-                  <div *ngIf="userFormControls['firstname'].errors['required']">
+                  <div *ngIf="userFormControls['firstName'].errors['required']">
                     First Name is required
                   </div>
                 </div>
@@ -39,24 +39,24 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="lastname"
+                  id="lastName"
                   placeholder="Enter Last Name"
-                  formControlName="lastname"
+                  formControlName="lastName"
                   autocomplete="off"
                   [ngClass]="{
                     'is-invalid':
-                      isUserFormSubmitted && userFormControls['lastname'].errors
+                      isUserFormSubmitted && userFormControls['lastName'].errors
                   }"
                   autofocus
                 />
                 <label for="floatingInputUsername">LastName</label>
                 <div
                   *ngIf="
-                    isUserFormSubmitted && userFormControls['lastname'].errors
+                    isUserFormSubmitted && userFormControls['lastName'].errors
                   "
                   class="invalid-feedback"
                 >
-                  <div *ngIf="userFormControls['lastname'].errors['required']">
+                  <div *ngIf="userFormControls['lastName'].errors['required']">
                     Last Name is required
                   </div>
                 </div>
