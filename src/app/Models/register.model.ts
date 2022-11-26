@@ -1,8 +1,16 @@
 export interface IUserRegistrationFormData {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
+  gender:string;
+  dob:Date;
+  phone:number;
+  city:string;
+  country:string;
+  pincode:string;
+  profession:string;
   email: string;
   password: string;
   confirmpassword: string;
-  gender:string;
+  isAdmin:boolean;
+  isActive:boolean;
 }

@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div
-          class="card flex-row my-5 border-7 shadow rounded-3 overflow-hidden"
+          class="card flex-row my-4 border-7 shadow rounded-3 overflow-hidden"
         >
           <div class="card-body p-4 p-sm-5">
             <h5 class="card-title text-center mb-5 fw-light fs-2">Registration</h5>
@@ -12,23 +12,24 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="firstname"
+                  id="firstName"
                   placeholder="Enter First Name"
-                  formControlName="firstname"
+                  formControlName="firstName"
+                  autocomplete="off"
                   [ngClass]="{
                     'is-invalid':
-                      isUserFormSubmitted && userFormControls['firstname'].errors
+                      isUserFormSubmitted && userFormControls['firstName'].errors
                   }"
                   autofocus
                 />
                 <label for="floatingInputUsername">FirstName</label>
                 <div
                   *ngIf="
-                    isUserFormSubmitted && userFormControls['firstname'].errors
+                    isUserFormSubmitted && userFormControls['firstName'].errors
                   "
                   class="invalid-feedback"
                 >
-                  <div *ngIf="userFormControls['firstname'].errors['required']">
+                  <div *ngIf="userFormControls['firstName'].errors['required']">
                     First Name is required
                   </div>
                 </div>
@@ -38,23 +39,24 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="lastname"
+                  id="lastName"
                   placeholder="Enter Last Name"
-                  formControlName="lastname"
+                  formControlName="lastName"
+                  autocomplete="off"
                   [ngClass]="{
                     'is-invalid':
-                      isUserFormSubmitted && userFormControls['lastname'].errors
+                      isUserFormSubmitted && userFormControls['lastName'].errors
                   }"
                   autofocus
                 />
                 <label for="floatingInputUsername">LastName</label>
                 <div
                   *ngIf="
-                    isUserFormSubmitted && userFormControls['lastname'].errors
+                    isUserFormSubmitted && userFormControls['lastName'].errors
                   "
                   class="invalid-feedback"
                 >
-                  <div *ngIf="userFormControls['lastname'].errors['required']">
+                  <div *ngIf="userFormControls['lastName'].errors['required']">
                     Last Name is required
                   </div>
                 </div>
@@ -66,6 +68,7 @@
                   class="form-control"
                   id="dob"
                   placeholder="Enter DOB"
+                  autocomplete="off"
                   formControlName="dob"
                   [ngClass]="{
                     'is-invalid':
@@ -111,6 +114,7 @@
                   class="form-control"
                   id="email"
                   placeholder="Enter Your email"
+                  autocomplete="off"
                   formControlName="email"
                   [ngClass]="{
                     'is-invalid':
@@ -139,6 +143,7 @@
                   class="form-control"
                   id="password"
                   placeholder="Enter Password"
+                  autocomplete="off"
                   formControlName="password"
                   [ngClass]="{
                     'is-invalid':
@@ -165,6 +170,7 @@
                   id="confirmpassword"
                   placeholder="Enter Confirm Password"
                   formControlName="confirmpassword"
+                  autocomplete="off"
                   [ngClass]="{
                     'is-invalid':
                       isUserFormSubmitted &&

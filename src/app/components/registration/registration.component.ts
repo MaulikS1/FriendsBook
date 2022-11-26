@@ -33,22 +33,21 @@ export class RegistrationComponent implements OnInit {
   public initializeUserForm(): void {
     this.registrationForm = this.formBuilder.group(
       {
-        firstname: ['', [Validators.required]],
-        lastname: ['', [Validators.required]],
-        dob: ['', [Validators.required]],
+        firstName: ['', [Validators.required]],
+        lastName: ['', [Validators.required]],
         gender: ['', [Validators.required]],
+        dob: ['', [Validators.required]],
+        phone: '',
+        city: '',
+        state: '',
+        country: '',
+        pincode: '',
+        profession: 'Developer',
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         confirmpassword: ['', [Validators.required]],
-        orders: [[]],
-        address: [
-          {
-            houseno: '',
-            city: '',
-            state: '',
-            landmark: '',
-          },
-        ],
+        isActive: true,
+        isAdmin: false
       },
       {
         validator: MustMatch('password', 'confirmpassword'),
