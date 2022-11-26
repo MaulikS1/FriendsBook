@@ -42,7 +42,7 @@ export class RegistrationComponent implements OnInit {
         state: '',
         country: '',
         pincode: '',
-        profession: 'Developer',
+        profession: 'Developer-Test',
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         confirmpassword: ['', [Validators.required]],
