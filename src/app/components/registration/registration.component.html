@@ -18,7 +18,8 @@
                   autocomplete="off"
                   [ngClass]="{
                     'is-invalid':
-                      isUserFormSubmitted && userFormControls['firstName'].errors
+                      isUserFormSubmitted &&
+                      userFormControls['firstName'].errors
                   }"
                   autofocus
                 />
@@ -78,9 +79,7 @@
                 />
                 <label for="floatingInputUsername">Date of Birth</label>
                 <div
-                  *ngIf="
-                    isUserFormSubmitted && userFormControls['dob'].errors
-                  "
+                  *ngIf="isUserFormSubmitted && userFormControls['dob'].errors"
                   class="invalid-feedback"
                 >
                   <div *ngIf="userFormControls['dob'].errors['required']">
@@ -90,16 +89,21 @@
               </div>
 
               <div class="form-floating mb-3">
-                <select formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': isUserFormSubmitted && userFormControls['dob'].errors }">
+                <select
+                  formControlName="gender"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      isUserFormSubmitted && userFormControls['dob'].errors
+                  }"
+                >
                   <option value="">Select Gender</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
-              </select>
+                </select>
                 <label for="floatingInputUsername">Gender</label>
                 <div
-                  *ngIf="
-                    isUserFormSubmitted && userFormControls['dob'].errors
-                  "
+                  *ngIf="isUserFormSubmitted && userFormControls['dob'].errors"
                   class="invalid-feedback"
                 >
                   <div *ngIf="userFormControls['dob'].errors['required']">
@@ -107,7 +111,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="form-floating mb-3">
                 <input
                   type="email"
