@@ -12,25 +12,25 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="username"
-                  placeholder="Enter Your username"
-                  formControlName="username"
+                  id="email"
+                  placeholder="Enter Your email"
+                  formControlName="email"
                   autocomplete="off"
                   [ngClass]="{
                     'is-invalid':
-                      isUserFormSubmitted && userFormControls['username'].errors
+                      isUserFormSubmitted && userFormControls['email'].errors
                   }"
                   autofocus
                 />
                 <label for="floatingInputUsername">Username</label>
                 <div
                   *ngIf="
-                    isUserFormSubmitted && userFormControls['username'].errors
+                    isUserFormSubmitted && userFormControls['email'].errors
                   "
                   class="invalid-feedback"
                 >
-                  <div *ngIf="userFormControls['username'].errors['required']">
-                    UserName is required
+                  <div *ngIf="userFormControls['email'].errors['required']">
+                    Email is required
                   </div>
                 </div>
               </div>
