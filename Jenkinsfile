@@ -18,5 +18,12 @@ pipeline{
         //         sh "cp - R /Users/aakash/.jenkins/workspace/angnov/dist /usr/local/var/www/angularapp/dist"
         //     }
         // }
+      
+     post {
+        always {
+            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+        }
+      }
+      
     }
 }
