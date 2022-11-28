@@ -15,7 +15,7 @@ pipeline{
       
         stage("Deploy"){
              steps{
-                 sh "rm -rf /usr/share/nginx/html/AngularProject/dist"
+                 sh "rm -rf /usr/share/nginx/html/AngularProject/dist/"
                  sh "cp - R /var/lib/jenkins/workspace/AngularProject/dist /usr/share/nginx/html/AngularProject/dist"
              }
          }
