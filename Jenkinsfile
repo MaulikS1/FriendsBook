@@ -13,12 +13,12 @@ pipeline{
             }
         }
       
-        // stage("Deploy"){
-        //     steps{
-        //         sh "rm -rf /usr/local/var/www/angularapp/dist"
-        //         sh "cp - R /Users/aakash/.jenkins/workspace/angnov/dist /usr/local/var/www/angularapp/dist"
-        //     }
-        // }
+        stage("Deploy"){
+             steps{
+                 sh "rm -rf /usr/share/nginx/html/AngularProject/dist"
+                 sh "cp - R /var/lib/jenkins/workspace/AngularProject/dist /usr/share/nginx/html/AngularProject/dist"
+             }
+         }
       
     }
 }
