@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { IUserRegistrationFormData } from '../Models/register.model';
-import { baseUrl } from 'src/environments/environment';
+import { baseUrl } from 'src/environments/environment.prod';
 import { IUserData } from '../Models/user.model';
 
 @Injectable({
