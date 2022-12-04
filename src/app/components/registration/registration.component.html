@@ -1,3 +1,4 @@
+<app-header></app-header>
 <body>
   <div class="container">
     <div class="row">
@@ -6,7 +7,7 @@
           class="card flex-row my-4 border-7 shadow rounded-3 overflow-hidden"
         >
           <div class="card-body p-4 p-sm-5">
-            <h5 class="card-title text-center mb-5 fw-light fs-2">Registration</h5>
+            <h5 class="card-title text-center mb-5 fs-2">Registration</h5>
             <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
               <div class="form-floating mb-3">
                 <input
@@ -18,7 +19,8 @@
                   autocomplete="off"
                   [ngClass]="{
                     'is-invalid':
-                      isUserFormSubmitted && userFormControls['firstName'].errors
+                      isUserFormSubmitted &&
+                      userFormControls['firstName'].errors
                   }"
                   autofocus
                 />
@@ -78,9 +80,7 @@
                 />
                 <label for="floatingInputUsername">Date of Birth</label>
                 <div
-                  *ngIf="
-                    isUserFormSubmitted && userFormControls['dob'].errors
-                  "
+                  *ngIf="isUserFormSubmitted && userFormControls['dob'].errors"
                   class="invalid-feedback"
                 >
                   <div *ngIf="userFormControls['dob'].errors['required']">
@@ -90,16 +90,21 @@
               </div>
 
               <div class="form-floating mb-3">
-                <select formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': isUserFormSubmitted && userFormControls['dob'].errors }">
+                <select
+                  formControlName="gender"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      isUserFormSubmitted && userFormControls['dob'].errors
+                  }"
+                >
                   <option value="">Select Gender</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
-              </select>
+                </select>
                 <label for="floatingInputUsername">Gender</label>
                 <div
-                  *ngIf="
-                    isUserFormSubmitted && userFormControls['dob'].errors
-                  "
+                  *ngIf="isUserFormSubmitted && userFormControls['dob'].errors"
                   class="invalid-feedback"
                 >
                   <div *ngIf="userFormControls['dob'].errors['required']">
@@ -107,7 +112,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="form-floating mb-3">
                 <input
                   type="email"
@@ -202,14 +207,7 @@
                 </div>
               </div>
 
-              <input
-                ng-model="orders"
-                id="orders"
-                value=""
-                hidden="true"
-                formControlName="orders"
-                ng-list
-              />
+              
 
               <div class="form-group login-group-checkbox">
                 <input type="checkbox" id="terms" name="lg_remember" />
