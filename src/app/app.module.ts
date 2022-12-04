@@ -17,6 +17,7 @@ import { AuthnavbarComponent } from './components/authnavbar/authnavbar.componen
 import { NetworkComponent } from './components/network/network.component';
 import { FriendsComponent } from './components/friends/friends.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     AuthnavbarComponent,
     NetworkComponent,
     FriendsComponent,
-    SettingsComponent
+    SettingsComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
