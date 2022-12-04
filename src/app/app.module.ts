@@ -13,6 +13,10 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { AboutComponent } from './components/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { AuthnavbarComponent } from './components/authnavbar/authnavbar.component';
+import { NetworkComponent } from './components/network/network.component';
+import { FriendsComponent } from './components/friends/friends.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { HomeComponent } from './components/home/home.component';
     FooterComponent,
     WelcomeComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    AuthnavbarComponent,
+    NetworkComponent,
+    FriendsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
