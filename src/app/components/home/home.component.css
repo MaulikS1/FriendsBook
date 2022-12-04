@@ -1,0 +1,35 @@
+.pointer {
+    cursor: pointer;
+  }
+  
+  .bgcolor {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .opt:hover {
+    color: rgb(243, 236, 235) !important;
+    font-weight: 900;
+    background-color: #3e525f;
+  }
+  
+  .nav-link.active {
+    color: rgb(243, 236, 235) !important;
+    background-color: #3e525f;
+  }
+  
+  .abc {
+    color: rgb(243, 236, 235) !important;
+    background-color: #3e525f;
+  }
+
+  .card-body{
+    margin-top: 2%;
+  }
+
+  li{
+    margin-top: 2%;
+  }
+
+  .list-group{
+    --bs-list-group-border-color: white
+  }
