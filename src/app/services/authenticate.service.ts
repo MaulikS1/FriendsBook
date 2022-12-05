@@ -6,20 +6,24 @@ import { baseUrl } from 'src/environments/environment.prod';
 import { IUserData } from '../Models/user.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthenticateService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  public register(formData: IUserRegistrationFormData): Observable<IUserRegistrationFormData[]> 
-  {
-    return this.http.post<IUserRegistrationFormData[]>(`${baseUrl}users/register`,formData);
+  public register(
+    formData: IUserRegistrationFormData
+  ): Observable<IUserRegistrationFormData[]> {
+    return this.http.post<IUserRegistrationFormData[]>(
+      `${baseUrl}users/register`,
+      formData
+    );
   }
 
-  public login(formData: IUserData): Observable<IUserData[]> 
-  {
-    return this.http.post<IUserData[]>(`${baseUrl}users/authenticate`,formData);
+  public login(formData: IUserData): Observable<IUserData[]> {
+    return this.http.post<IUserData[]>(
+      `${baseUrl}users/authenticate`,
+      formData
+    );
   }
-
 }
