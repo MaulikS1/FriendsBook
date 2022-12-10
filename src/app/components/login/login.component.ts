@@ -46,14 +46,18 @@ export class LoginComponent implements OnInit {
     this.loginDetails = this.loginForm.getRawValue();
      this.authService
        .login(this.loginDetails)
-       .subscribe((res: IUserData[]) => {
-        console.log(res);
-         if (res.length == 0) {
+       .subscribe((res: any) => {
+        console.log("Result==>",res.success);
+         if (res.success == 0) {
            alert('Invalid Username and Password');
-         } else {
+         }
+         else if (res.success == 101) {
+          alert('User is Inactive, please contact Administrator!');
+        }
+         else {
            //this.authService.setCurrentUser(res);
            alert('login Successfull');
-           //this.router.navigateByUrl('/home');
+           this.router.navigateByUrl('/auth/home');
          }
        });
   }

@@ -33,3 +33,7 @@
   .list-group{
     --bs-list-group-border-color: white
   }
+
+  .card{
+    --bs-card-border-width: 3px;
+  }
