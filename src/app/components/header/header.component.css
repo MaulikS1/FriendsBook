@@ -57,3 +57,7 @@ body {
     float: none;
   }
 }
+
+.navbar-toggler{
+  background-color: white;
+}

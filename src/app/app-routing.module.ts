@@ -6,6 +6,7 @@ import { FriendsComponent } from './components/friends/friends.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NetworkComponent } from './components/network/network.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -16,10 +17,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'about', component:  AboutComponent},
   { path: '', component: WelcomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'network', component: NetworkComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'friends', component: FriendsComponent },
+  { path: 'auth/home', component: HomeComponent },
+  { path: 'auth/network', component: NetworkComponent },
+  { path: 'auth/settings', component: SettingsComponent },
+  { path: 'auth/friends', component: FriendsComponent },
+  { path: '**', pathMatch: 'full', component: PagenotfoundComponent },
 ];
 
 @NgModule({
